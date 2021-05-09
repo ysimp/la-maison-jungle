@@ -1,7 +1,7 @@
 import {plantList} from '../datas/plantList'
 import '../styles/ShoppingList.css'
 import '../components/CareScale'
-import CareScale from '../components/CareScale'
+import PlantItem from '../components/PlantItem'
 
 // pour chaque entrée du tableau, on retourne un élément  <li>.
 
@@ -20,7 +20,6 @@ function ShoppingList(){
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
 		[]
 	)
-    
 
     return (
         <div>
@@ -30,12 +29,15 @@ function ShoppingList(){
             </ul>
             <h2>Plantes</h2> 
             <ul className='lmj-plant-list'>
-                {/* <Indiquée entre accolades,  &&   précède un élément JSX et précise que l'élément ne sera généré que si la condition est respectée> */}
-                {plantList.map((plant) => (<li key={plant.id}  className='lmj-plant-item'>{plant.name}
-                {plant.isSpecialOffer && <div className='lmj-sales'>Soldes</div>}
-                <CareScale careType='water' scaleValue={plant.water} />
-                <CareScale careType='light' scaleValue={plant.light} />
-             </li>))}
+    
+             {plantList.map(( {id, cover, name, water, light})=>(
+                 <PlantItem 
+                 id={id} 
+                 cover={cover} 
+                 name={name} 
+                 water={water}
+                 light={light} />
+             ))}
             </ul>
         </div>
     )
