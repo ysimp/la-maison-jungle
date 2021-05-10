@@ -27,28 +27,6 @@ function CareScale({scaleValue, careType}){
         scaleValue >= rangElem ? (<span key={rangElem.toString()}>{scaleType}</span>):null)}
 
     </div>)
-
-    function checkValue(){
-        if(careType=== 'light' && scaleValue === 1){
-            alert('Cette plante requiert peu de lumière')
-        }
-        if(careType=== 'light' && scaleValue === 2){
-            alert('Cette plante requiert moderement  de lumière')
-        }
-        if(careType=== 'light' && scaleValue === 3){
-            alert('Cette plante requiert beaucoup de lumière')
-        }
-
-        if(careType=== 'water' && scaleValue === 1){
-            alert('Cette plante requiert peu d arrosage ')
-        }
-        if(careType=== 'water' && scaleValue === 2){
-            alert('Cette plante requiert moderement d arrosage')
-        }
-        if(careType=== 'water' && scaleValue === 3){
-            alert('Cette plante requiert beaucoup d arrosage')
-        }
-    }
 }
 
 export default CareScale
