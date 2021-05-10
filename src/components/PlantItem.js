@@ -3,8 +3,8 @@ import CareScale from '../components/CareScale'
 function PlantItem({id, cover, name, water, light}){
 
     return (
-        <li key={id} className='lmj-plant-item' onClick={handleClick}>
-            <img className='lmj-plant-item-cover' src={cover} alt={`${cover}cover`}/>
+        <li key={id} className='lmj-plant-item'>
+            {/* <img className='lmj-plant-item-cover' src={cover} alt={`${cover}cover`}/> */}
             {name}
             <div>
                 <CareScale careType='water' scaleValue={water} />
@@ -14,9 +14,5 @@ function PlantItem({id, cover, name, water, light}){
     )
 }
 
-function handleClick(e){
-    // alert(`Vous voulez achetez 1 ${plantName} très bon choix 🌱✨`)
-    console.log('Ceci est mon event: ',e)
-}
 
 export default PlantItem
